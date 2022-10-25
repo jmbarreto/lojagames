@@ -1,9 +1,10 @@
-import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
+import { HttpException, HttpStatus, Injectable, UseGuards } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import { JwtAuthGuard } from "src/auth/guard/jwt.auth.guard";
 import { DeleteResult, ILike, Repository } from "typeorm";
 import { Produto } from "../entities/produto.entity";
 
-
+@UseGuards (JwtAuthGuard)
 @Injectable ()
 export class ProdutoService {
     constructor (

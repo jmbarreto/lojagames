@@ -34,4 +34,5 @@ export class Produto {
         onDelete: "CASCADE"
     })
     categoria: Categoria;
+    usuario: any;
 }
